@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FtAbateQuarteioHabilitacao>
+
+@{
+    ViewData["Title"] = "Entrada de produção";
+}
+
+<div class="text-center">
+    <table class="table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cbd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ncdempresaabate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isequencial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cquarto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Csexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dmovimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ncdhabilitacaocamara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Npeso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ncdhistoricosaida)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cbd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeItem => item.Ncdempresaabate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isequencial)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.Cquarto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Csexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dmovimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ncdhabilitacaocamara)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Npeso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ncdhistoricosaida)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
