@@ -1,71 +1,22 @@
-﻿@model IEnumerable<FtAbateQuarteioHabilitacao>
-
-@{
+﻿@{
     ViewData["Title"] = "Entrada de produção";
 }
 
 <div class="text-center">
-    <table class="table-bordered">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Cbd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ncdempresaabate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Isequencial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cquarto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Csexo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dmovimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ncdhabilitacaocamara)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Npeso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ncdhistoricosaida)
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cbd)
-                </td>
-                <td>
-                    @Html.DisplayFor(modeItem => item.Ncdempresaabate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Isequencial)
-                </td>
-                 <td>
-                    @Html.DisplayFor(modelItem => item.Cquarto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Csexo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dmovimento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ncdhabilitacaocamara)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Npeso)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ncdhistoricosaida)
-                </td>
-            </tr>
-        }
-    </table>
+
+    <section>
+        <div>
+            <a class="navbar-brand" asp-area="" asp-route-tipo="BANDA" asp-route-unidade="182" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Banda</strong></a>
+
+        </div>
+        <div>
+            <a class="navbar-brand" asp-area="" asp-route-tipo="DIANTEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Dianteiro</strong></a>
+        </div>
+        <div>
+            <a class="navbar-brand" asp-area="" asp-route-tipo="TRASEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Traseiro</strong></a>
+        </div>
+         <div>
+            <a class="navbar-brand" asp-area="" asp-route-tipo="PA" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Ponta de Agulha</strong></a>
+        </div>
+    </section>
 </div>

@@ -56,6 +56,12 @@ namespace ManutencaoPlano
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "EntradaProducao",
+                    pattern: "EntradaProducao/{tipo}/{unidade}",
+                    defaults: new { controller = "EntradaProducao", action = "Tabela"}
+                    );
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

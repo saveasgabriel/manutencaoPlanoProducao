@@ -18,6 +18,8 @@ namespace ManutencaoPlano.Data
 
         public DbSet<FtAbateQuarteioHabilitacao> FtAbateQuarteioHabilitacao { get; set; }
 
+        public DbSet<ViewDisponibilidadeQuartos> ViewDisponibilidadeQuartos { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -100,6 +102,173 @@ namespace ManutencaoPlano.Data
                 entity.Property(e => e.Npeso).HasColumnName("npeso");
 
                 entity.Property(e => e.Npesobruto).HasColumnName("npesobruto");
+            });
+
+            modelBuilder.Entity<ViewDisponibilidadeQuartos>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("view_disponibilidade_quartos", "fato");
+
+                entity.Property(e => e.Alb)
+                    .HasColumnName("alb")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Arg)
+                    .HasColumnName("arg")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ccamaradeestocagem)
+                    .HasColumnName("ccamaradeestocagem")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ccb)
+                    .HasColumnName("ccb")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Cgrdura)
+                    .HasColumnName("cgrdura")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Chabilitacaoabate)
+                    .HasColumnName("chabilitacaoabate")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Chl)
+                    .HasColumnName("chl")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Cnomeestocagem)
+                    .HasColumnName("cnomeestocagem")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Cnomeproduto)
+                    .HasColumnName("cnomeproduto")
+                    .HasMaxLength(250);
+
+                entity.Property(e => e.Csexo)
+                    .HasColumnName("csexo")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Csigla)
+                    .HasColumnName("csigla")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Csisbovidentificador)
+                    .HasColumnName("csisbovidentificador")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ctipificacaochile)
+                    .HasColumnName("ctipificacaochile")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ctipoquarto)
+                    .HasColumnName("ctipoquarto")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ddataabate)
+                    .HasColumnName("ddataabate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Ddataabertura)
+                    .HasColumnName("ddataabertura")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Ddatafechamento)
+                    .HasColumnName("ddatafechamento")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Ddataproducao)
+                    .HasColumnName("ddataproducao")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Ddatavalidade)
+                    .HasColumnName("ddatavalidade")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Dza)
+                    .HasColumnName("dza")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Egy)
+                    .HasColumnName("egy")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Fpesoliquido).HasColumnName("fpesoliquido");
+
+                entity.Property(e => e.Fph).HasColumnName("fph");
+
+                entity.Property(e => e.Ibanda).HasColumnName("ibanda");
+
+                entity.Property(e => e.Icodigoempresa).HasColumnName("icodigoempresa");
+
+                entity.Property(e => e.Icodigoestocagem).HasColumnName("icodigoestocagem");
+
+                entity.Property(e => e.Icodigoproduto).HasColumnName("icodigoproduto");
+
+                entity.Property(e => e.Iidade).HasColumnName("iidade");
+
+                entity.Property(e => e.Ilote).HasColumnName("ilote");
+
+                entity.Property(e => e.Irq)
+                    .HasColumnName("irq")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Isequencial).HasColumnName("isequencial");
+
+                entity.Property(e => e.Isif).HasColumnName("isif");
+
+                entity.Property(e => e.Isr)
+                    .HasColumnName("isr")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Kwt)
+                    .HasColumnName("kwt")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Mar)
+                    .HasColumnName("mar")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Mi)
+                    .HasColumnName("mi")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ne)
+                    .HasColumnName("ne")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Om)
+                    .HasColumnName("om")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Per)
+                    .HasColumnName("per")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Psr)
+                    .HasColumnName("psr")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Sau)
+                    .HasColumnName("sau")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Tun)
+                    .HasColumnName("tun")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ukr)
+                    .HasColumnName("ukr")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Ury)
+                    .HasColumnName("ury")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Zaf)
+                    .HasColumnName("zaf")
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

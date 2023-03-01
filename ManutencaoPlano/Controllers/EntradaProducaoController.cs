@@ -1,22 +1,51 @@
-﻿using ManutencaoPlano.Models;
+﻿using ManutencaoPlano.Data;
+using ManutencaoPlano.Models;
 using ManutencaoPlano.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ManutencaoPlano.Controllers
 {
     public class EntradaProducaoController : Controller
     {
-        private readonly IEntradaProducaoRepositorio _entradaProducaoRepositorio;
-        public EntradaProducaoController (IEntradaProducaoRepositorio entradaProducaoRepositorio)
+
+        private readonly planodiarioContext _planodiarioContext;
+
+        public EntradaProducaoController(planodiarioContext planodiarioContext)
         {
-            _entradaProducaoRepositorio = entradaProducaoRepositorio;
+            _planodiarioContext = planodiarioContext;
         }
+
+        //private readonly IEntradaProducaoRepositorio _entradaProducaoRepositorio;
+        //public EntradaProducaoController (IEntradaProducaoRepositorio entradaProducaoRepositorio)
+        //{
+        //    _entradaProducaoRepositorio = entradaProducaoRepositorio;
+        //}
 
         public IActionResult Index()
         {
-            List<FtAbateQuarteioHabilitacao> dados = _entradaProducaoRepositorio.BuscarTodos();
-            return View(dados);
+            return View();
         }
+
+
+        public IActionResult Tabela(string tipo, int unidade)
+        {
+            //IEnumerable<FtAbateQuarteioHabilitacao> dados = _entradaProducaoRepositorio.BuscarPorTipo(tipo, unidade);
+
+            IEnumerable<FtAbateQuarteioHabilitacao> tabela = _planodiarioContext.FtAbateQuarteioHabilitacao
+                .Where(x => x.Cquarto == tipo &&
+                    x.Ncdempresaproducao == unidade && x.Ncdhistoricosaida == null)
+                .OrderBy(x => x.Isequencial).ToList();
+
+            var result = from tb in tabela
+                         select tb;
+            
+
+
+
+            return View(result);
+        }
+
     }
 }
