@@ -1,6 +1,17 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+:root {
+    --cor-azul-claro: #badff4;
+    --cor-azul-escuro: #32527B;
+    --cor-vermelho: #eb515a;
+    --cor-cinza-claro: #dee2e6;
+}
+
+.navbar {
+    background-color: var(--cor-cinza-claro)
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -20,7 +31,7 @@ a {
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
+  background-color: var(--cor-cinza-claro);
   border-color: #1861ac;
 }
 
@@ -69,3 +80,5 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+

@@ -33,10 +33,10 @@ namespace ManutencaoPlano.Controllers
         {
             //IEnumerable<FtAbateQuarteioHabilitacao> dados = _entradaProducaoRepositorio.BuscarPorTipo(tipo, unidade);
 
-            IEnumerable<FtAbateQuarteioHabilitacao> tabela = _planodiarioContext.FtAbateQuarteioHabilitacao
-                .Where(x => x.Cquarto == tipo &&
-                    x.Ncdempresaproducao == unidade && x.Ncdhistoricosaida == null)
-                .OrderBy(x => x.Isequencial).ToList();
+            IEnumerable<ViewDisponibilidadeQuartos> tabela = _planodiarioContext.ViewDisponibilidadeQuartos
+                .Where(x => x.Ctipoquarto == tipo &&
+                    x.Icodigoempresa == unidade)
+                .ToList();
 
             var result = from tb in tabela
                          select tb;
@@ -44,7 +44,7 @@ namespace ManutencaoPlano.Controllers
 
 
 
-            return View(result);
+            return View(tabela);
         }
 
     }

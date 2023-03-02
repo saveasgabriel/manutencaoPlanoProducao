@@ -1,22 +1,44 @@
-﻿@{
+﻿@using System.IO
+@{
     ViewData["Title"] = "Entrada de produção";
 }
 
-<div class="text-center">
+<div class="container-fluid">
+    <div class="card-columns">
+        <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Banda</h3>
+            <div class="card-body text-center text-primary">
+                @Html.Raw(File.ReadAllText("wwwroot/svg/meia-carcaca-bovina.svg"))
+                <p class="card-text text-dark"></p>
+                <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="BANDA" asp-route-unidade="182" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+            </div>
+        </div>
 
-    <section>
-        <div>
-            <a class="navbar-brand" asp-area="" asp-route-tipo="BANDA" asp-route-unidade="182" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Banda</strong></a>
+         <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Traseiro</h3>
+            <div class="card-body text-center text-primary">
+                @Html.Raw(File.ReadAllText("wwwroot/svg/traseiro-serrote.svg"))
+                <p class="card-text text-dark"></p>
+                <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="TRASEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+            </div>
+        </div>
 
+         <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Dianteiro</h3>
+            <div class="card-body text-center text-primary">
+                @Html.Raw(File.ReadAllText("wwwroot/svg/dianteiro-com-peito.svg"))
+                <p class="card-text text-dark"></p>
+                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="DIANTEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+            </div>
         </div>
-        <div>
-            <a class="navbar-brand" asp-area="" asp-route-tipo="DIANTEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Dianteiro</strong></a>
+
+         <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Ponta de Agulha</h3>
+            <div class="card-body text-center text-primary">
+                @Html.Raw(File.ReadAllText("wwwroot/svg/costela-inteira.svg"))
+                <p class="card-text text-dark"></p>
+                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="PA" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+            </div>
         </div>
-        <div>
-            <a class="navbar-brand" asp-area="" asp-route-tipo="TRASEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Traseiro</strong></a>
-        </div>
-         <div>
-            <a class="navbar-brand" asp-area="" asp-route-tipo="PA" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Ponta de Agulha</strong></a>
-        </div>
-    </section>
+    </div>
 </div>

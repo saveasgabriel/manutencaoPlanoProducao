@@ -1,0 +1,96 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap');
+
+:root {
+    --cor-cabecalho: #37517ee6;
+    --cor-primaria: #ffff;
+    --cor-secundaria: black;
+    --font-cabecalho: 'Jost', sans-serif;
+    --radius-border: 0.1rem;
+    --cor-azul-claro: #badff4;
+    --cor-azul-escuro: #32527B;
+    --cor-vermelho: #eb515a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.tabela {
+    margin-top: 0.5rem;
+}
+
+.cabecalho {
+    width: 100%;
+    background-color: var(--cor-cabecalho);
+    padding: 1rem;
+}
+
+.cabecalho__itens {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.capa {
+    padding: 1rem;
+}
+
+.principal {
+    padding: 1rem;
+}
+
+.principal__titulo {
+    font-family: var(--font-cabecalho);
+    text-align: left;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    font-family: var(--font-cabecalho);
+    color: black;
+}
+
+.principal__conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+table {
+    width: 100%;
+    font-family: var(--font-cabecalho);
+    border-style: none;
+    border-radius: var(--radius-border);
+}
+
+.colunas__principais {
+    font-size: large;
+    text-align: center;
+    border-radius: var(--radius-border);
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-radius: var(--radius-border);
+}
+
+th {
+    color: var(--cor-primaria);
+    background-color: var(--cor-azul-escuro);
+}
+
+.botoes-seletores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.8rem;
+    background-color: gray;
+    margin-left: 2px;
+    padding: 10px;
+    border-radius: var(--radius-border);
+}
