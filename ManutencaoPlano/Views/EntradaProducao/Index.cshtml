@@ -3,42 +3,48 @@
     ViewData["Title"] = "Entrada de produção";
 }
 
-<div class="container-fluid">
+<div class="container">
+
     <div class="card-columns">
+
         <div class="card p-1 text-center shadow-sm">
             <h3 class="">Banda</h3>
             <div class="card-body text-center text-primary">
-                @Html.Raw(File.ReadAllText("wwwroot/svg/meia-carcaca-bovina.svg"))
+                <img src="~/png/meia-carcaca-bovina.png" style="height: 8rem; filter: invert(100%)"/>
                 <p class="card-text text-dark"></p>
                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="BANDA" asp-route-unidade="182" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
             </div>
         </div>
 
-         <div class="card p-1 text-center shadow-sm">
+        <div class="card p-1 text-center shadow-sm">
             <h3 class="">Traseiro</h3>
             <div class="card-body text-center text-primary">
-                @Html.Raw(File.ReadAllText("wwwroot/svg/traseiro-serrote.svg"))
+                <img src="~/png/traseiro-serrote.png" style="height: 8rem; filter: invert(100%)"/>
                 <p class="card-text text-dark"></p>
                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="TRASEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
             </div>
         </div>
 
-         <div class="card p-1 text-center shadow-sm">
+        <div class="card p-1 text-center shadow-sm">
             <h3 class="">Dianteiro</h3>
             <div class="card-body text-center text-primary">
-                @Html.Raw(File.ReadAllText("wwwroot/svg/dianteiro-com-peito.svg"))
+                <img src="~/png/dianteiro-com-peito.png" style="height: 8rem; filter: invert(100%)"/>
                 <p class="card-text text-dark"></p>
-                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="DIANTEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+                    <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="DIANTEIRO" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
             </div>
         </div>
 
-         <div class="card p-1 text-center shadow-sm">
+        <div class="card p-1 text-center shadow-sm">
             <h3 class="">Ponta de Agulha</h3>
             <div class="card-body text-center text-primary">
-                @Html.Raw(File.ReadAllText("wwwroot/svg/costela-inteira.svg"))
+                <img src="~/png/costela-inteira.png" style="height: 8rem; filter: invert(100%)"/>
                 <p class="card-text text-dark"></p>
-                 <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="PA" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
+                    <a class="text-primary stretched-link text-right d-block" asp-area="" asp-route-tipo="PA" asp-route-unidade="70" asp-controller="EntradaProducao" asp-action="Tabela"><strong>Acessar</strong></a>
             </div>
         </div>
+
     </div>
+
 </div>
+
+

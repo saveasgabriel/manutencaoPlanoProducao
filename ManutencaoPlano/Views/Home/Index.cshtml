@@ -2,7 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="card-columns">
+        <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Entradas</h3>
+            <div class="card-body text-center text-primary">
+                <img src="~/png/volumes-lupa.png" style="height: 8rem;"/>
+                <p class="card-text text-dark">Filtro para desenho de volumes</p>
+                <a class="text-primary stretched-link text-right d-block" asp-area=""  asp-controller="EntradaProducao" asp-action="Index"><strong>Acessar</strong></a>
+            </div>
+        </div>
+
+         <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Premissas</h3>
+            <div class="card-body text-center text-primary">
+                <img src="~/png/premissas.png" style="height: 8rem;"/>
+                <p class="card-text text-dark">Regras p/ manutenção do plano</p>
+                <a class="text-primary stretched-link text-right d-block" asp-area=""  asp-controller="Premissas" asp-action="Index"><strong>Acessar</strong></a>
+            </div>
+        </div>
+
+        <div class="card p-1 text-center shadow-sm">
+            <h3 class="">Plano</h3>
+            <div class="card-body text-center text-primary">
+                <img src="~/png/plano.png" style="height: 8rem;"/>
+                <p class="card-text text-dark">Planejamento proposto</p>
+                <a class="text-primary stretched-link text-right d-block" asp-area=""  asp-controller="Plano" asp-action="Index"><strong>Acessar</strong></a>
+            </div>
+        </div>
+    </div>
 </div>

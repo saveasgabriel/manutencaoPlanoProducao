@@ -22,7 +22,6 @@
 
 .cabecalho {
     width: 100%;
-    background-color: var(--cor-cabecalho);
     padding: 1rem;
 }
 
@@ -41,7 +40,6 @@
 }
 
 .principal__titulo {
-    font-family: var(--font-cabecalho);
     text-align: left;
 }
 
@@ -50,7 +48,6 @@
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    font-family: var(--font-cabecalho);
     color: black;
 }
 
@@ -62,7 +59,6 @@
 
 table {
     width: 100%;
-    font-family: var(--font-cabecalho);
     border-style: none;
     border-radius: var(--radius-border);
 }

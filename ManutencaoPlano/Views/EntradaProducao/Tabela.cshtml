@@ -4,6 +4,35 @@
     ViewData["Title"] = "Entrada de produção";
 }
 
+<div>
+    <div class="btn-group">
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+           PDP
+        </button>
+        <div class="dropdown-menu">
+            @foreach (var item in Model)
+            {
+                <a class="dropdown-item" href="#">@Html.DisplayFor(model => item.Csigla)</a>   
+            }
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+           Modalidade
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">48H; QUEBRA 24H; MAT. 24H</a>
+            <a class="dropdown-item" href="#">48H; MAT. 24H; QUEBRA 24H</a>
+            <a class="dropdown-item" href="#">SOMENTE 48H</a>
+            <a class="dropdown-item" href="#">SOMENTE 24H</a>
+        </div>
+      </div>
+    </div>
+</div>
+
 <div class="text-center table-responsive">
 
     <table class="table-hover table-bordered">
