@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ViewDisponibilidadeQuartos>
+
+<table class="table-hover table-bordered">
+    <tr>
+        <th class="colunas__principais" rowspan="2" colspan="1">Fechamento</th>
+        <th class="colunas__principais" colspan="2">Câmaras</th>
+        <th class="colunas__principais" colspan="5">Habilitações</th>
+        <th class="colunas__principais" colspan="5">Tipificação</th>
+        <th class="colunas__principais" rowspan="2" colspan="1">Média</th>
+    </tr>
+    <tr class="colunas__secundarias">
+        <!--<th>@Html.//DisplayNameFor(model => model.Ddatafechamento)</th>-->
+        <th>@Html.DisplayNameFor(model => model.Ddatafechamento)</th>
+        <th>@Html.DisplayNameFor(model => model.Total)</th>
+        <th>@Html.DisplayNameFor(model => model.Chl)</th>
+        <th>@Html.DisplayNameFor(model => model.Sau)</th>
+        <th>@Html.DisplayNameFor(model => model.Egy)</th>
+        <th>@Html.DisplayNameFor(model => model.Psr)</th>
+        <th>@Html.DisplayNameFor(model => model.Mi)</th>
+        <th>@Html.DisplayNameFor(model => model.Ate2)</th>
+        <th>@Html.DisplayNameFor(model => model._2)</th>
+        <th>@Html.DisplayNameFor(model => model._3)</th>
+        <th>@Html.DisplayNameFor(model => model._31)</th>
+        <th>@Html.DisplayNameFor(model => model._3Up)</th>
+        <!--<th>@Html.//DisplayNameFor(model => model.Media)</th>-->
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="dados__tabela">
+            <td>@Html.DisplayFor(modelItem => item.Ddatafechamento)</td>
+            <td>@Html.DisplayFor(modelItem => item.Ccamaradeestocagem)</td>
+            <td>@Html.DisplayFor(modelItem => item.Total)</td>
+            <td>@Html.DisplayFor(modelItem => item.Chl)</td>
+            <td>@Html.DisplayFor(modelItem => item.Sau)</td>
+            <td>@Html.DisplayFor(modelItem => item.Egy)</td>
+            <td>@Html.DisplayFor(modelItem => item.Psr)</td>
+            <td>@Html.DisplayFor(modelItem => item.Mi)</td>
+            <td>@Html.DisplayFor(modelItem => item.Ate2)</td>
+            <td>@Html.DisplayFor(modelItem => item._2)</td>
+            <td>@Html.DisplayFor(modelItem => item._3)</td>
+            <td>@Html.DisplayFor(modelItem => item._31)</td>
+            <td>@Html.DisplayFor(modelItem => item._3Up)</td>
+            <td>@Html.DisplayFor(modelItem => item.Media) kg</td>
+        </tr>
+    }
+</table>

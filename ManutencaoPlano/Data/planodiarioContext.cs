@@ -27,6 +27,8 @@ namespace ManutencaoPlano.Data
             {
                 entity.HasNoKey();
 
+               
+
                 entity.ToTable("ft_abate_quarteio_habilitacao", "fato");
 
                 entity.Property(e => e.Cbd)

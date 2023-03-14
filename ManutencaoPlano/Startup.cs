@@ -29,6 +29,7 @@ namespace ManutencaoPlano
             services.AddControllersWithViews();
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<planodiarioContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DataBase")));
+            
             services.AddScoped<IEntradaProducaoRepositorio, EntradaProducaoRepositorio>();
             
         }
@@ -57,9 +58,16 @@ namespace ManutencaoPlano
             {
                 endpoints.MapControllerRoute(
                     name: "EntradaProducao",
-                    pattern: "EntradaProducao/{tipo}/{unidade}",
+                    pattern: "EntradaProducao/{tipo}/{unidade?}",
                     defaults: new { controller = "EntradaProducao", action = "Tabela"}
                     );
+
+                endpoints.MapControllerRoute(
+                    name: "TabelaParcial",
+                    pattern: "EntradaProducao/TabelaParcial/{tipo}/{unidade?}",
+                    defaults: new { controller = "EntradaProducao", action = "TabelaParcial" }
+                    );
+
 
                 endpoints.MapControllerRoute(
                     name: "default",

@@ -57,4 +57,6 @@ namespace ManutencaoPlano.Models
         [DisplayName("PESO")]
         public double? Media { get; set; }
     }
+
+
 }

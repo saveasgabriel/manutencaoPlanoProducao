@@ -7,9 +7,7 @@ namespace ManutencaoPlano.Repositorio
 {
     public interface IEntradaProducaoRepositorio
     {
-        IEnumerable<FtAbateQuarteioHabilitacao> BuscarTodos();
-
-        IEnumerable<FtAbateQuarteioHabilitacao> BuscarPorTipo(string tipo, int unidade);
+        IEnumerable<ViewDisponibilidadeQuartos> BuscarPorTipo(string tipo, string unidade);
 
     }
 

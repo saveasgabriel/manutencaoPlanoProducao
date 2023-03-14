@@ -1,83 +1,48 @@
-﻿@model IEnumerable<ViewDisponibilidadeQuartos>
+﻿@model EntradaProducaoViewModel
+@section Scripts {
+    <script>
+        function atualizarPartial(parametro) {
+            var url = "/EntradaProducao/TabelaParcial/@ViewBag.TipoAtual/"; //TROCAR PARAMETRO TIPO DE PRODUÇÃO
+            if (parametro) {
+                var url = url + encodeURIComponent(parametro);
+            }
+            $('#disponibilidade').load(url);
+        }
+
+        $(document).ready(function () {
+            $("#atualizar-botao").click(function () {
+                var parametro = $("#parametro-dropdown").val();
+                atualizarPartial(parametro);
+            });
+        });
+    </script>
+}
 
 @{
     ViewData["Title"] = "Entrada de produção";
 }
 
-<div>
-    <div class="btn-group">
+<div id="partial-view-container">
+    <div>
+        <p>@ViewBag.TipoAtual</p>
 
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-           PDP
-        </button>
-        <div class="dropdown-menu">
-            @foreach (var item in Model)
+        <select id="parametro-dropdown" class="btn btn-primary">
+            @foreach (var item in ViewBag.Siglas)
             {
-                <a class="dropdown-item" href="#">@Html.DisplayFor(model => item.Csigla)</a>   
+                <option value="@item">@item</option>
             }
-        </div>
-      </div>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-           Modalidade
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">48H; QUEBRA 24H; MAT. 24H</a>
-            <a class="dropdown-item" href="#">48H; MAT. 24H; QUEBRA 24H</a>
-            <a class="dropdown-item" href="#">SOMENTE 48H</a>
-            <a class="dropdown-item" href="#">SOMENTE 24H</a>
-        </div>
-      </div>
+        </select>
+        <button class="btn btn-primary" id="atualizar-botao">Atualizar</button>
     </div>
 </div>
 
-<div class="text-center table-responsive">
 
-    <table class="table-hover table-bordered">
-        <tr>
-            <th class ="colunas__principais" rowspan="2" colspan="1">Fechamento</th>
-            <th class ="colunas__principais" colspan="2">Câmaras</th>
-            <th class ="colunas__principais" colspan="5">Habilitações</th>
-            <th class ="colunas__principais" colspan="5">Tipificação</th>
-            <th class ="colunas__principais" rowspan="2" colspan="1">Média</th>
-        </tr>
-        <tr class="colunas__secundarias">
-            <!--<th>@Html.//DisplayNameFor(model => model.Ddatafechamento)</th>-->
-            <th>@Html.DisplayNameFor(model => model.Ccamaradeestocagem)</th>
-            <th>@Html.DisplayNameFor(model => model.Total)</th>
-            <th>@Html.DisplayNameFor(model => model.Chl)</th>
-            <th>@Html.DisplayNameFor(model => model.Sau)</th>
-            <th>@Html.DisplayNameFor(model => model.Egy)</th>
-            <th>@Html.DisplayNameFor(model => model.Psr)</th>
-            <th>@Html.DisplayNameFor(model => model.Mi)</th>
-            <th>@Html.DisplayNameFor(model => model.Ate2)</th>
-            <th>@Html.DisplayNameFor(model => model._2)</th>
-            <th>@Html.DisplayNameFor(model => model._3)</th>
-            <th>@Html.DisplayNameFor(model => model._31)</th>
-            <th>@Html.DisplayNameFor(model => model._3Up)</th>
-            <!--<th>@Html.//DisplayNameFor(model => model.Media)</th>-->
-                      
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr class="dados__tabela">
-                <td>@Html.DisplayFor(modelItem => item.Ddatafechamento)</td>
-                <td>@Html.DisplayFor(modelItem => item.Ccamaradeestocagem)</td>
-                <td>@Html.DisplayFor(modelItem => item.Total)</td>
-                <td>@Html.DisplayFor(modelItem => item.Chl)</td>
-                <td>@Html.DisplayFor(modelItem => item.Sau)</td>
-                <td>@Html.DisplayFor(modelItem => item.Egy)</td>
-                <td>@Html.DisplayFor(modelItem => item.Psr)</td>
-                <td>@Html.DisplayFor(modelItem => item.Mi)</td>
-                <td>@Html.DisplayFor(modelItem => item.Ate2)</td>
-                <td>@Html.DisplayFor(modelItem => item._2)</td>
-                <td>@Html.DisplayFor(modelItem => item._3)</td>
-                <td>@Html.DisplayFor(modelItem => item._31)</td>
-                <td>@Html.DisplayFor(modelItem => item._3Up)</td>
-                <td>@Html.DisplayFor(modelItem => item.Media) kg</td>
-            </tr>
-        }
-    </table>
+<div id="disponibilidade" class="text-center table-responsive">
+    @await Component.InvokeAsync("TabelaParcial", new { tipo = @ViewBag.TipoAtual, unidade = "PDP" })
 </div>
+
+
+
+
+
+

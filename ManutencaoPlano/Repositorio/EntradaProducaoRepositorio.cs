@@ -16,28 +16,24 @@ namespace ManutencaoPlano.Repositorio
             _planodiarioContext = planodiarioContext;
         }
 
-        public IEnumerable<FtAbateQuarteioHabilitacao> BuscarPorTipo(string tipo, int unidade)
+        public IEnumerable<ViewDisponibilidadeQuartos> BuscarPorTipo(string tipo, string unidade)
         {
-            return _planodiarioContext.FtAbateQuarteioHabilitacao
-                .Where(x => x.Cquarto == tipo && 
-                    x.Ncdempresaproducao == unidade && x.Ncdhistoricosaida == null)
-                .OrderBy(x => x.Isequencial);
-                
-        }
-
-        public IEnumerable<FtAbateQuarteioHabilitacao> BuscarTodos()
-        {
-
-            var tabela = _planodiarioContext.FtAbateQuarteioHabilitacao
-                .Where(x => x.Ncdhistoricosaida == null
-                        && x.Ncdempresaabate == 182 && x.Dmovimento == Convert.ToDateTime("2023-01-25"))
-                .OrderBy(x => x.Isequencial)
+            if (unidade == null )            
+            {
+                return _planodiarioContext.ViewDisponibilidadeQuartos
+                .Where(x => x.Ctipoquarto == tipo)
+                .OrderBy(o => o.Ddatafechamento)
                 .ToList();
-            
 
-            return tabela;
-        }
-
-        
+            }
+            else
+            {
+                return _planodiarioContext.ViewDisponibilidadeQuartos
+                .Where(x => x.Ctipoquarto == tipo &&
+                    x.Csigla == unidade)
+                .OrderBy(o => o.Ddatafechamento)
+                .ToList();
+            }
+        }        
     }
 }
